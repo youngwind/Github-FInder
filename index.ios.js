@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
-
 var React = require('react-native');
 var {
   AppRegistry,
@@ -11,8 +5,10 @@ var {
   Text,
   View,
   TextInput,
-  ListView
-  } = React;
+  ListView,
+  ActivityIndicatorIOS,
+  }
+  = React;
 
 var BASE_URL = "https://api.github.com/search/repositories?q=";
 
@@ -82,6 +78,7 @@ var GithubFinder = React.createClass({
                    style={styles.searchBarInput}
                    onEndEditing={this.onSearchChange}
           />
+        <ActivityIndicatorIOS color="red" />
         {content}
       </View>
     );
